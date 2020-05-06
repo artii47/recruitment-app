@@ -36,7 +36,9 @@ const UserDelete = () => {
   return (
     <div>
       <Modal
-        header={`Are you sure u want to delete user with name ${user.name}?`}
+        header={`Are you sure u want to delete ${
+          user.name ? `user with name ${user.name}` : "this user"
+        }?`}
         modalContent={actions}
       />
     </div>
