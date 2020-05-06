@@ -1,0 +1,12 @@
+.btn {
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn--red {
+  background-color: #fa8f87;
+}
+
+.btn--green {
+  background-color: #93bf9e;
+}

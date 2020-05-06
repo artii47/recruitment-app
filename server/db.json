@@ -1,22 +1,13 @@
 {
   "users": [
     {
-      "name": "andrew",
-      "login": "dsfdsfsdf",
-      "userId": "11615252952583931236656939",
-      "email": "fsdfsd@gmail.com"
-    },
-    {
-      "name": "tom",
-      "login": "dsfdsfsdf",
-      "userId": "116152952123583936312656939",
-      "email": "fsdfsd@gmail.com"
-    },
-    {
-      "name": "kate",
-      "login": "dsfdsfsdf",
-      "userId": "116155232952583936656939",
-      "email": "fsdfsd@gmail.com"
+      "name": "Timmy",
+      "lastName": "Barton",
+      "email": "Ian.Brakus74@hotmail.com",
+      "city": "Abernathyfurt",
+      "country": "Guatemalahgfhgf",
+      "picture": "https://picsum.photos/200/300",
+      "id": 1
     }
   ]
 }

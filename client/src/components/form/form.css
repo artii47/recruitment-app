@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+}
+
+input {
+  text-align: center;
+  height: 40px;
+  margin: 5px 0;
+  border: 1px solid #c1c4c9;
+  box-shadow: 0 1px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-btn {
+  border: 1px solid #dadce0;
+  background-color: #ebeced;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.3);
+  height: 50px;
+}

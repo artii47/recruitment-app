@@ -1,0 +1,21 @@
+th,
+table,
+td {
+  border: 1px solid black;
+}
+
+th {
+  height: 30px;
+}
+
+td {
+  height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
