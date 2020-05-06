@@ -8,10 +8,12 @@ import "./user-delete.css";
 const UserDelete = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  useEffect(() => {
-    dispatch(fetchUser(params.id));
-  });
   const user = useSelector((state) => state.users[params.id]);
+  useEffect(() => {
+    if (!user) {
+      dispatch(fetchUser(params.id));
+    }
+  }, [dispatch, params.id]);
   if (!user) {
     return "LOADING";
   }

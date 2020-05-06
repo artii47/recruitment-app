@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsersFromDb } from "../../actions";
+import { addUsers } from "../../actions";
 import UserItem from "../user-item/user-item";
 import "./user-list.css";
 
@@ -8,10 +8,10 @@ const UserList = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   useEffect(() => {
-    dispatch(fetchUsersFromDb());
+    dispatch(addUsers());
   }, [dispatch]);
   return (
-    <table style={{ width: "1000px", margin: "0 auto" }}>
+    <table className="table">
       <thead>
         <tr>
           <th>Firstname</th>

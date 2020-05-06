@@ -1,22 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./user-item.css";
 
-const UserItem = (props) => {
+const UserItem = ({ name, lastName, country, city, email, id }) => {
   return (
     <tr>
-      <td>{props.name}</td>
-      <td>{props.lastName}</td>
-      <td>{props.country}</td>
-      <td>{props.city}</td>
-      <td>{props.email}</td>
+      <td>{name}</td>
+      <td>{lastName}</td>
+      <td>{country}</td>
+      <td>{city}</td>
+      <td>{email}</td>
       <td>
-        <Link to={`/user/edit/${props.id}`} className="btn">
+        <Link to={`/user/edit/${id}`} className="btn">
           EDIT
         </Link>
       </td>
       <td>
-        <Link to={`/user/delete/${props.id}`} className="btn">
+        <Link to={`/user/delete/${id}`} className="btn">
           DELETE
         </Link>
       </td>
@@ -25,3 +26,19 @@ const UserItem = (props) => {
 };
 
 export default UserItem;
+
+UserItem.defaultProps = {
+  name: "",
+  lastName: "",
+  country: "",
+  city: "",
+};
+
+UserItem.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  country: PropTypes.string,
+  city: PropTypes.string,
+  email: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

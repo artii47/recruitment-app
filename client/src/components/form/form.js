@@ -1,17 +1,21 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./form.css";
 
-const Form = ({ onSubmitEvent, initialUserValues }) => {
+const Form = ({
+  onSubmitEvent,
+  initialUserValues: { name, lastName, country, city, email },
+}) => {
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
-      name: initialUserValues.name,
-      lastName: initialUserValues.lastName,
-      country: initialUserValues.country,
-      city: initialUserValues.city,
-      email: initialUserValues.email,
+      name: name,
+      lastName: lastName,
+      country: country,
+      city: city,
+      email: email,
     },
     onSubmit: (values) => {
       onSubmitEvent(values);
@@ -67,11 +71,26 @@ const Form = ({ onSubmitEvent, initialUserValues }) => {
         onChange={formik.handleChange}
         value={formik.values.email}
       />
-      <button type="submit" className="form-btn">
-        Edit
-      </button>
+      <button type="submit">Edit</button>
     </form>
   );
 };
 
 export default Form;
+
+Form.defaultProps = {
+  name: "",
+  lastName: "",
+  country: "",
+  city: "",
+  email: "",
+};
+
+Form.propTypes = {
+  onSubmitEvent: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  country: PropTypes.string,
+  city: PropTypes.string,
+  email: PropTypes.string,
+};

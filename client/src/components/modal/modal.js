@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./modal.css";
 
 const Modal = ({ header, modalContent }) => {
@@ -17,3 +18,8 @@ const Modal = ({ header, modalContent }) => {
 };
 
 export default Modal;
+
+Modal.propTypes = {
+  header: PropTypes.string.isRequired,
+  modalContent: PropTypes.element.isRequired,
+};

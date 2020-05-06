@@ -7,13 +7,15 @@ import Form from "../form/form";
 const UserEdit = () => {
   const dispatch = useDispatch();
   const params = useParams();
+  const user = useSelector((state) => state.users[params.id]);
   useEffect(() => {
-    dispatch(fetchUser(params.id));
+    if (!user) {
+      dispatch(fetchUser(params.id));
+    }
   }, [dispatch, params.id]);
   const onSubmit = (formValues) => {
     dispatch(editUser(params.id, formValues));
   };
-  const user = useSelector((state) => state.users[params.id]);
   if (!user) {
     return "LOADING";
   }

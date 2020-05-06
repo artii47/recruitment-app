@@ -1,13 +1,3 @@
 {
-  "users": [
-    {
-      "name": "Timmy",
-      "lastName": "Barton",
-      "email": "Ian.Brakus74@hotmail.com",
-      "city": "Abernathyfurt",
-      "country": "Guatemalahgfhgf",
-      "picture": "https://picsum.photos/200/300",
-      "id": 1
-    }
-  ]
+  "users": []
 }
