@@ -7,6 +7,18 @@ td {
 .table {
   width: 800px;
   margin: 0 auto;
+  border-collapse: collapse;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 800px) {
+  .table {
+    width: 600px;
+    font-size: 10px;
+  }
 }
 
 th {
@@ -15,12 +27,4 @@ th {
 
 td {
   height: 50px;
-}
-
-table {
-  border-collapse: collapse;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

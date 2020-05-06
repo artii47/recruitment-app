@@ -1,12 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./form.css";
 
 const Form = ({
   onSubmitEvent,
-  initialUserValues: { name, lastName, country, city, email },
+  user: { name, lastName, country, city, email },
 }) => {
   const history = useHistory();
   const formik = useFormik({
@@ -63,7 +63,11 @@ const Form = ({
         onChange={formik.handleChange}
         value={formik.values.city}
       />
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">
+        Email Address
+        <br />
+        *email is required
+      </label>
       <input
         id="email"
         name="email"
@@ -72,6 +76,7 @@ const Form = ({
         value={formik.values.email}
       />
       <button type="submit">Edit</button>
+      <Link to="/">Cancel</Link>
     </form>
   );
 };
