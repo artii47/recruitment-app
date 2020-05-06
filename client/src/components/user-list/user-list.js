@@ -8,8 +8,9 @@ const UserList = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   useEffect(() => {
-    dispatch(addUsers());
+    dispatch(addUsers(users));
   }, [dispatch]);
+
   return (
     <table className="table">
       <thead>

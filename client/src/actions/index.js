@@ -1,8 +1,9 @@
 import users from "../apis/users";
 import faker from "faker";
+import _ from 'lodash';
 import { ADD_USERS, EDIT_USER, FETCH_USER, DELETE_USER } from "./types";
 
-export const addUsers = () => async (dispatch) => {
+export const addUsers = (usersFromActionCall) => async (dispatch) => {
   //first we're getting data from local server to see if any users exist
   const response = await users.get("/users");
 
@@ -45,8 +46,13 @@ export const addUsers = () => async (dispatch) => {
     dispatch({ type: ADD_USERS, payload: usersData });
     return;
   }
-  //if users were found just add them to our apps store
-  dispatch({ type: ADD_USERS, payload: response.data });
+
+  //making sure we properly save data
+  if (response.data.length >= 0) {
+    if (!(_.isEqual(usersFromActionCall, _.mapKeys(response.data, "id")))) {
+      dispatch({ type: ADD_USERS, payload: response.data });
+    }
+  }
 };
 
 export const editUser = (id, formValues) => async (dispatch) => {
@@ -57,7 +63,6 @@ export const editUser = (id, formValues) => async (dispatch) => {
 
 export const fetchUser = (id) => async (dispatch) => {
   const response = await users.get(`/users/${id}`);
-
   dispatch({ type: FETCH_USER, payload: response.data });
 };
 
